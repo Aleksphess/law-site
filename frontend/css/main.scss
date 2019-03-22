@@ -93,6 +93,9 @@ body {
     flex: 9;
     @extend %flexbox;
     justify-content: space-between;
+    @include screen-1024 {
+      display: none;
+    }
   }
   &__link {
     color: $text-color;
@@ -134,6 +137,69 @@ body {
   }
   .adaptive-menu {
     display: none;
+    position: relative;
+    cursor: pointer;
+    @include screen-1024 {
+      display: block;
+    }
+    &__menu-top {
+      position: relative;
+      top: 5%;
+      margin: 0;
+      padding: 0;
+    }
+    &__full-menu {
+      display: none;
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 12;
+      box-sizing: border-box;
+      overflow: auto;
+      background: #fff;
+    }
+    &__open-menu {
+      @extend %flexbox;
+      align-items: baseline;
+      &:hover {
+        .adaptive-menu__title {
+          transition: 0.5s;
+          color: $main-color;
+        }
+      }
+    }
+    &__close-menu {
+      width: 100%;
+      display: inline-block;
+      padding: 5px 15px;
+      cursor: pointer;
+      font-size: 40px;
+      font-weight: bold;
+      text-align: right;
+      color: $main-color;
+    }
+    &__link {
+      display: block;
+      text-align: center;
+      padding: 20px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 35px;
+      font-weight: 500;
+      color: #000;
+      &:hover {
+        transition: 0.5s;
+        color: $main-color;
+      }
+    }
+    img {
+      outline: none;
+      &:focus, &:active {
+        outline: none;
+      }
+    }
   }
 }
 

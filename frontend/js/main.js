@@ -1,7 +1,3 @@
-/**
- * Created by user on 30.10.2018.
- */
-
 //active link in menu
 $(function () {
     $(".header__link").each(function () {
@@ -34,9 +30,9 @@ $(".adaptive-menu__open-menu").click(() => {
 $(".adaptive-menu__close-menu").click(() => {
     $(".adaptive-menu__full-menu").slideUp()
 });
-$(".adaptive-menu__link").click(() => {
-    $(".adaptive-menu__full-menu").slideUp()
-});
+// $(".adaptive-menu__link").click(() => {
+//     $(".adaptive-menu__full-menu").slideUp()
+// });
 
 //slider news
 $(".js-slider").slick({
