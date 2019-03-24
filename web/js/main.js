@@ -39,26 +39,49 @@ $(".js-slider").slick({
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    infinite:!0,
-    speed:400,
-    nav:true,
-    autoplaySpeed:2000,
+    infinite: !0,
+    speed: 400,
+    nav: true,
+    autoplaySpeed: 2000,
     margin: 10,
-    responsive:[{
-        breakpoint:1024,
-        settings:{
-            slidesToShow:3,
-            slidesToScroll:1
-        }},
+    responsive: [{
+        breakpoint: 1024,
+        settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+        }
+    },
         {
-            breakpoint:600,
-            settings:{
-                slidesToShow:2,
-                slidesToScroll:1
-        }},
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
         {
-            breakpoint:420,
-            settings:{
-                slidesToShow:1,
-                slidesToScroll:1}}]
+            breakpoint: 420,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }]
+});
+$(".form").on('submit', function (e) {
+    e.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: '/create-callback',
+        data: $(this).serialize(),
+        success: function (data) {
+            if (data.success == true) {
+                alert(1);
+            } else {
+                alert(2);
+            }
+
+        },
+        error: function (error) {
+            alert(3);
+        }
     });
+});

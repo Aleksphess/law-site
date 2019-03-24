@@ -21,6 +21,8 @@ class m190324_145536_add_created_add_to_services extends Migration
     public function safeDown()
     {
         $this->dropColumn('services', 'created_at');
+
+        return true;
     }
 
 }

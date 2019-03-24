@@ -2,12 +2,12 @@
 
 namespace app\controllers;
 
+use app\components\BaseController;
 use app\models\News;
 use yii\data\Pagination;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
-class NewsController extends Controller
+class NewsController extends BaseController
 {
     /**
      * {@inheritdoc}
@@ -33,7 +33,7 @@ class NewsController extends Controller
 
         $query = News::find();
         $countQuery = clone $query;
-        $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 1]);
+        $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 6, 'pageSizeParam' => false]);
         $news = $query->offset($pages->offset)
             ->limit($pages->limit)
             ->all();

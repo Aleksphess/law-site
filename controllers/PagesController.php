@@ -2,12 +2,12 @@
 
 namespace app\controllers;
 
+use app\components\BaseController;
 use app\models\Certificate;
 use app\models\Document;
 use app\models\Page;
-use yii\web\Controller;
 
-class PagesController extends Controller
+class PagesController extends BaseController
 {
     private const ABOUT_ALIAS = 'about';
     private const LEGISLATION_ALIAS = 'legislation';

@@ -259,6 +259,8 @@ class m190324_130426_main_pages extends Migration
         $this->dropTable('documents');
         $this->dropTable('callbacks');
 
+        return true;
+
     }
 
 }

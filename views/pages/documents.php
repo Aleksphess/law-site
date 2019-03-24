@@ -14,11 +14,11 @@ $this->title = $documentPage->getName();
                 <div class="documents__item" style="background: url('./img/document_bg1.jpg') no-repeat center / cover">
                     <div class="documents__content">
                         <h2 class="documents__name"><?= $document->getName(); ?></h2>
-                        <a class="documents__download" href="<?= $document->getFile(); ?>" download>Скачати</a>
+                        <a class="documents__download" href="/userfiles/<?=substr($document->getFile(), -3);?>/<?= $document->getFile(); ?>" download><?=$this->params['download']?></a>
                     </div>
                 </div>
             <?php endforeach; ?>
-            <a class="memory__link" href="#" rel="nofollow">Реквізити для сплати боргу</a>
+            <a class="memory__link" href="<?=$this->params['memory_link']?>" rel="nofollow"><?=$this->params['essential_information']?></a>
         </div>
     </section>
 </main>

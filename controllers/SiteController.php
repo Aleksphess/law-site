@@ -2,13 +2,13 @@
 
 namespace app\controllers;
 
+use app\components\BaseController;
 use app\models\BenefitOfCooperation;
 use app\models\News;
 use app\models\Page;
 use app\models\Service;
-use yii\web\Controller;
 
-class SiteController extends Controller
+class SiteController extends BaseController
 {
     private const MAIN_ALIAS = 'main';
 

@@ -23,5 +23,7 @@ class m190324_141136_sertificates_table extends Migration
     public function safeDown()
     {
        $this->dropTable('certificates');
+
+       return true;
     }
 }

@@ -12,6 +12,7 @@ use Yii;
  * @property string $email
  * @property string $phone
  * @property string $text
+ * @property int $created_at
  */
 class Callback extends \yii\db\ActiveRecord
 {
@@ -31,6 +32,7 @@ class Callback extends \yii\db\ActiveRecord
         return [
             [['text'], 'string'],
             [['name', 'email', 'phone'], 'string', 'max' => 255],
+            [['email', 'phone'], 'required'],
         ];
     }
 

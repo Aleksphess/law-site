@@ -97,6 +97,12 @@ $config = [
                     'route' => 'pages/memory',
                     'suffix' => false
                 ],
+                [
+                    'verb' => 'POST',
+                    'pattern' => 'create-callback',
+                    'route' => 'callback/create',
+                    'suffix' => false
+                ],
                 '/' => 'site/index'
             ],
         ],

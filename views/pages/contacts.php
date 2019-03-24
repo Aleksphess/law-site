@@ -11,39 +11,39 @@ $this->title = $contactsPage->getName();
         <h1 class="contacts__caption"><?= $contactsPage->getName();?></h1>
         <div class="contacts__container">
             <?= $contactsPage->getText();?>
-            <form action="#" class="form">
+            <form id="callback" class="form">
                 <div class="form__field">
-                    <input type="text" name="name" placeholder="Ім'я" required />
+                    <input type="text" name="name" placeholder="<?=$this->params['name']?>" required />
                 </div>
                 <div class="form__field">
                     <input type="email" name="email" placeholder="E-Mail" />
-                    <span class="form__error">Це поле має містити E-Mail у форматі example@site.com</span>
+                    <span class="form__error"><?=$this->params['email_placeholder']?></span>
                 </div>
                 <div class="form__field">
-                    <input type="tel" name="phone" placeholder="Телефон" pattern="[\+3]\d{2}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" minlength="19" maxlength="19" />
-                    <span class="form__error">Це поле має містити телефон у форматі +38 (123) 456-78-90</span>
+                    <input type="tel" name="phone" placeholder="Телефон" />
+                    <span class="form__error"><?=$this->params['phone_placeholder']?></span>
                 </div>
                 <div class="form__field">
-                    <textarea name="message" cols="30" rows="6" required placeholder="Повідомлення"></textarea>
+                    <textarea name="text" id="text" cols="30" rows="6" required placeholder="Повідомлення"></textarea>
                 </div>
                 <input class="form__send" value="Відправити" type="submit">
             </form>
             <div class="services__container">
                 <div class="services__item">
-                    <object class="services__obj" data="./img/icons/placeholder.svg"></object>
-                    <p class="services__title">10-а, вулиця Княгині Ольги, Ровно, Ровенская область, 33014</p>
+                    <object class="services__obj" data="/img/icons/placeholder.svg"></object>
+                    <p class="services__title"><?=$this->params['address']?></p>
                 </div>
                 <div class="services__item">
-                    <object class="services__obj" data="./img/icons/phone-call.svg"></object>
-                    <a class="services__title" href="tel:0999999999">+38 (099) - 999 - 99 - 99</a>
+                    <object class="services__obj" data="/img/icons/phone-call.svg"></object>
+                    <a class="services__title" href="tel:0999999999"><?=$this->params['phone_1']?></a>
                 </div>
                 <div class="services__item">
-                    <object class="services__obj" data="./img/icons/envelope.svg"></object>
-                    <a class="services__title" href="mailto:mail@ukr.net">mail@ukr.net</a>
+                    <object class="services__obj" data="/img/icons/envelope.svg"></object>
+                    <a class="services__title" href="mailto:mail@ukr.net"><?=$this->params['me_email']?></a>
                 </div>
                 <div class="services__item">
-                    <object class="services__obj" data="./img/icons/small-calendar.svg"></object>
-                    <a class="services__title" href="#">Графік роботи: пн-пт 9.00-18.00 Прийом громадян: пн, пт 10.00 – 13.00</a>
+                    <object class="services__obj" data="/img/icons/small-calendar.svg"></object>
+                    <a class="services__title" href="#"><?=$this->params['schedule']?></a>
                 </div>
             </div>
         </div>
