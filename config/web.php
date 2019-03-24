@@ -15,6 +15,7 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'zgjT7iDYlfsZdVShGuhkX4MH7Fsm2A2d',
+            'baseUrl' => ''
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -28,9 +29,6 @@ $config = [
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
             'useFileTransport' => true,
         ],
         'log' => [
@@ -43,14 +41,66 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
+
         'urlManager' => [
-            'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'enableStrictParsing' => true,
+            'enablePrettyUrl' => true,
             'rules' => [
+                [
+                    'pattern' => 'news/page/<page>',
+                    'route' => 'news/index',
+                    'suffix' => false
+                ],
+                [
+                    'pattern' => 'news',
+                    'route' => 'news/index',
+                    'suffix' => false
+                ],
+                [
+                    'pattern' => 'news/<alias>',
+                    'route' => 'news/view',
+                    'suffix' => false
+                ],
+                [
+                    'pattern' => 'about',
+                    'route' => 'pages/about',
+                    'suffix' => false
+                ],
+                [
+                    'pattern' => 'contacts',
+                    'route' => 'pages/contacts',
+                    'suffix' => false
+                ],
+                [
+                    'pattern' => 'legislation',
+                    'route' => 'pages/legislation',
+                    'suffix' => false
+                ],
+                [
+                    'pattern' => 'documents',
+                    'route' => 'pages/documents',
+                    'suffix' => false
+                ],
+                [
+                    'pattern' => 'services',
+                    'route' => 'pages/services',
+                    'suffix' => false
+                ],
+                [
+                    'pattern' => 'procedure_and_performance_terms',
+                    'route' => 'pages/procedure-and-terms',
+                    'suffix' => false
+                ],
+                [
+                    'pattern' => 'memory_for_user',
+                    'route' => 'pages/memory',
+                    'suffix' => false
+                ],
+                '/' => 'site/index'
             ],
         ],
-        */
+
     ],
     'params' => $params,
 ];
@@ -68,7 +118,7 @@ if (YII_ENV_DEV) {
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
-        //'allowedIPs' => ['127.0.0.1', '::1'],
+        'allowedIPs' => ['127.0.0.1', '::1'],
     ];
 }
 
