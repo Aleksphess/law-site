@@ -51,13 +51,14 @@ $(".js-slider").slick({
             slidesToScroll:1
         }},
         {
-            breakpoint:600,
+            breakpoint:992,
             settings:{
                 slidesToShow:2,
-                slidesToScroll:1
+                slidesToScroll:1,
+                nav:false
         }},
         {
-            breakpoint:420,
+            breakpoint:650,
             settings:{
                 slidesToShow:1,
                 slidesToScroll:1}}]

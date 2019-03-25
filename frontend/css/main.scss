@@ -20,8 +20,8 @@ $width: 100%;
   }
 }
 
-@mixin screen-679 {
-  @media screen and (max-width: 679px) {
+@mixin screen-580 {
+  @media screen and (max-width: 580px) {
     @content;
   }
 }
@@ -215,6 +215,9 @@ body {
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    @include screen-1024 {
+      box-sizing: border-box;
+    }
   }
   &__block {
     width: 680px;
@@ -240,6 +243,9 @@ body {
     margin: 20px 0 0 50px;
     padding: 10px 20px;
     font-size: 22px;
+    @include screen-580 {
+      margin: 20px;
+    }
   }
   &__phone {
     background: $text-color;
@@ -288,7 +294,7 @@ body {
     display: none;
     opacity: 0;
     z-index: 11;
-    @include screen-679 {
+    @include screen-580 {
       width: 100%;
       height: auto;
       left: 0;
@@ -381,6 +387,9 @@ body {
     position: relative;
     outline: 2px solid $main-color;
     outline-offset: -10px;
+    @include screen-580 {
+      width: 100%;
+    }
   }
   &__block {
       text-align: justify;
@@ -510,6 +519,9 @@ body {
     background: rgba(255, 255, 255, 0.7);
     padding: 10px 20px;
     margin: 3%;
+    @include screen-1024 {
+      width: 35%;
+    }
   }
   &__title {
     font-size: 18px;
@@ -532,6 +544,13 @@ body {
     @extend %flexbox;
     justify-content: space-between;
     margin-top: 20px;
+    @include screen-1024 {
+      justify-content: space-evenly;
+    }
+    @include screen-580 {
+      align-items: center;
+      flex-direction: column;
+    }
   }
   &__caption {
     @extend %caption;
@@ -542,6 +561,13 @@ body {
     width: 11%;
     text-align: center;
     background: rgba(255,255,255,0.7);
+    @include screen-1024 {
+      width: 30%;
+    }
+    @include screen-580 {
+      width: 90%;
+      margin-bottom: 30px;
+    }
   }
   &__obj {
     width: 110px;
@@ -992,6 +1018,11 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 30px 20px;
+  }
+  &__nav {
+    @include screen-1024 {
+      margin-bottom: 30px;
+    }
   }
   &__caption {
     margin-bottom: 5px;
