@@ -20,9 +20,13 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
+        'css/main.css',
     ];
     public $js = [
+        'https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js',
+        '/js/slick.min.js',
+        '/js/main.js',
+        '/js/lightbox-plus-jquery.min.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

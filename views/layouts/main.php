@@ -11,6 +11,7 @@ use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
 AppAsset::register($this);
+$urlManager = \Yii::$app->urlManager;
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -26,54 +27,116 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-<div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => Yii::$app->name,
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
-            Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
-            ) : (
-                '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout']
-                )
-                . Html::endForm()
-                . '</li>'
-            )
-        ],
-    ]);
-    NavBar::end();
-    ?>
+<header class="header js-fixed">
+    <nav class="header__container">
+        <a href="<?= $urlManager->createAbsoluteUrl(['/'])?>"><img width="85" src="/img/logo.png" alt=""></a>
+        <ul class="header__nav">
+            <li class="header__list">
+                <a href="<?= $urlManager->createAbsoluteUrl(['/'])?>" class="header__link"><?= $this->params['main'];?></a>
+            </li>
+            <li class="header__list">
+                <a href="<?= $urlManager->createAbsoluteUrl(['pages/about'])?>" class="header__link"><?= $this->params['about'];?></a>
+            </li>
+            <li class="header__list">
+                <a href="<?= $urlManager->createAbsoluteUrl(['pages/legislation'])?>" class="header__link"><?= $this->params['law'];?></a>
+            </li>
+            <li class="header__list">
+                <a href="<?= $urlManager->createAbsoluteUrl(['pages/documents'])?>" class="header__link"><?= $this->params['documents'];?></a>
+            </li>
+            <li class="header__list">
+                <a href="<?= $urlManager->createAbsoluteUrl(['pages/services'])?>" class="header__link"><?= $this->params['services'];?></a>
+            </li>
+            <li class="header__list">
+                <a href="<?= $urlManager->createAbsoluteUrl(['pages/procedure-and-terms'])?>" class="header__link"><?= $this->params['procedures_and_terms'];?></a>
+            </li>
+            <li class="header__list">
+                <a href="<?= $urlManager->createAbsoluteUrl(['pages/memory'])?>" class="header__link"><?= $this->params['memory_for_user'];?></a>
+            </li>
+            <li class="header__list">
+                <a href="<?= $urlManager->createAbsoluteUrl(['news/index'])?>" class="header__link"><?= $this->params['news'];?></a>
+            </li>
+            <li class="header__list">
+                <a href="<?= $urlManager->createAbsoluteUrl(['pages/contacts'])?>" class="header__link"><?= $this->params['contacts'];?></a>
+            </li>
+        </ul>
 
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
-    </div>
-</div>
+        <div class="adaptive-menu">
+            <a class="adaptive-menu__open-menu">
+                <img src="/img/icons/menu.svg" alt="">
+            </a>
+            <div class="adaptive-menu__full-menu">
+                <a class="adaptive-menu__close-menu" href="#" >X</a>
+                <nav class="adaptive-menu__menu">
+                    <a class="adaptive-menu__link" href="<?= $urlManager->createAbsoluteUrl(['/'])?>"><?= $this->params['main'];?></a>
+                    <a class="adaptive-menu__link" href="<?= $urlManager->createAbsoluteUrl(['pages/about'])?>"><?= $this->params['about'];?></a>
+                    <a class="adaptive-menu__link" href="<?= $urlManager->createAbsoluteUrl(['pages/legislation'])?>"><?= $this->params['law'];?></a>
+                    <a class="adaptive-menu__link" href="<?= $urlManager->createAbsoluteUrl(['pages/documents'])?>"><?= $this->params['documents'];?></a>
+                    <a class="adaptive-menu__link" href="<?= $urlManager->createAbsoluteUrl(['pages/services'])?>"><?= $this->params['services'];?></a>
+                    <a class="adaptive-menu__link" href="<?= $urlManager->createAbsoluteUrl(['pages/procedure-and-terms'])?>"><?= $this->params['procedures_and_terms'];?></a>
+                    <a class="adaptive-menu__link" href="<?= $urlManager->createAbsoluteUrl(['pages/memory'])?>"><?= $this->params['memory_for_user'];?></a>
+                    <a class="adaptive-menu__link" href="<?= $urlManager->createAbsoluteUrl(['news/index'])?>"><?= $this->params['news'];?></a>
+                    <a class="adaptive-menu__link" href="<?= $urlManager->createAbsoluteUrl(['pages/contacts'])?>"><?= $this->params['contacts'];?></a>
+                </nav>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<?= $content ?>
 
 <footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
+    <div class="footer__container">
+        <ul class="footer__nav">
+            <li class="footer__list">
+                <a href="<?= $urlManager->createAbsoluteUrl(['pages/about'])?>" class="footer__link"><?= $this->params['about'];?></a>
+            </li>
+            <li class="footer__list">
+                <a href="<?= $urlManager->createAbsoluteUrl(['pages/legislation'])?>" class="footer__link"><?= $this->params['law'];?></a>
+            </li>
+            <li class="footer__list">
+                <a href="<?= $urlManager->createAbsoluteUrl(['pages/documents'])?>" class="footer__link"><?= $this->params['documents'];?></a>
+            </li>
+            <li class="footer__list">
+                <a href="<?= $urlManager->createAbsoluteUrl(['pages/services'])?>" class="footer__link"><?= $this->params['services'];?></a>
+            </li>
+            <li class="footer__list">
+                <a href="<?= $urlManager->createAbsoluteUrl(['pages/procedure-and-terms'])?>" class="footer__link"><?= $this->params['procedures_and_terms'];?></a>
+            </li>
+            <li class="footer__list">
+                <a href="<?= $urlManager->createAbsoluteUrl(['pages/memory'])?>" class="footer__link"><?= $this->params['memory_for_user'];?></a>
+            </li>
+            <li class="footer__list">
+                <a href="<?= $urlManager->createAbsoluteUrl(['news/index'])?>" class="footer__link"><?= $this->params['news'];?></a>
+            </li>
+        </ul>
+        <div class="footer__name">
+            <p class="footer__caption"><?= $this->params['private_user'];?></p>
+            <p class="footer__region"><?= $this->params['okrug'];?></p>
+            <p class="footer__color"><?= $this->params['me_name'];?></p>
+            <p class="footer__location"><?= $this->params['address'];?></p>
+        </div>
+        <div class="footer__address">
+            <p class="footer__caption"><?= $this->params['phone'];?>:</p>
+            <a href="tel:+38(099)999-99-99" class="footer__phone"><?= $this->params['phone_1'];?></a>
+            <a href="tel:+38(099)999-99-99" class="footer__phone footer__phone--second"><?= $this->params['phone_2'];?></a>
+            <p class="footer__caption"><?= $this->params['email'];?>:</p>
+            <a class="footer__mail" href="mailto:mail@ukr.net"><?= $this->params['me_email'];?></a>
+            <p class="footer__"><?= $this->params['schedule'];?></p>
+        </div>
+        <div class="footer__connection">
+            <div class="footer__social">
+                <a class="footer__slink" href="<?= $this->params['facebook_link'];?>"><object data="/img/facebook.svg"></object></a>
+                <a class="footer__slink" href="<?= $this->params['instagram_link'];?>"><object data="/img/instagram.svg"></object></a>
+                <a class="footer__slink" href="<?= $this->params['google_link'];?>"><object data="/img/google-plus.svg"></object></a>
+            </div>
+            <a class="info__callback js-callback" href="#"><?= $this->params['callback'];?></a>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <p class="footer__copyright">Copyright © 2019. All Rights Reserved</p>
     </div>
 </footer>
+
 
 <?php $this->endBody() ?>
 </body>
