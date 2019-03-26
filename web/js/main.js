@@ -30,9 +30,6 @@ $(".adaptive-menu__open-menu").click(() => {
 $(".adaptive-menu__close-menu").click(() => {
     $(".adaptive-menu__full-menu").slideUp()
 });
-// $(".adaptive-menu__link").click(() => {
-//     $(".adaptive-menu__full-menu").slideUp()
-// });
 
 //slider news
 $(".js-slider").slick({
@@ -66,6 +63,12 @@ $(".js-slider").slick({
             }
         }]
 });
+
+function formSend() {
+    $('.form .clear-form').val('');
+    $('.form__notification').show(500);
+}
+
 $(".form").on('submit', function (e) {
     e.preventDefault();
     $.ajax({
@@ -74,9 +77,9 @@ $(".form").on('submit', function (e) {
         data: $(this).serialize(),
         success: function (data) {
             if (data.success == true) {
-                alert(1);
+                formSend();
             } else {
-                alert(2);
+                alert('Error');
             }
 
         },

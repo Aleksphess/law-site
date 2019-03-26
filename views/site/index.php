@@ -21,27 +21,6 @@ $this->title = 'Головна';
                 <a href="#" class="info__callback js-callback"><?= $this->params['callback'];?></a>
             </div>
         </div>
-        <div class="info__popup">
-            <img class="info__close" src="/img/close-button.svg" alt="">
-            <form id="callback" class="form">
-                <div class="form__field">
-                    <input type="text" name="name" placeholder="<?= $this->params['name'];?>" required/>
-                </div>
-                <div class="form__field">
-                    <input type="email" name="email" placeholder="E-Mail"/>
-                    <span class="form__error"><?= $this->params['email_placeholder'];?></span>
-                </div>
-                <div class="form__field">
-                    <input type="tel" name="phone" placeholder="Телефон"/>
-                    <span class="form__error"><?= $this->params['phone_placeholder'];?></span>
-                </div>
-                <div class="form__field">
-                    <textarea cols="30" rows="6" name="text" id="text" required placeholder="Повідомлення"></textarea>
-                </div>
-                <input class="form__send" value="Відправити" type="submit">
-            </form>
-        </div>
-        <div class="info__overlay"></div>
     </section>
 
     <section class="about">

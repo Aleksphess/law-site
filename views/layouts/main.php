@@ -135,6 +135,28 @@ $urlManager = \Yii::$app->urlManager;
     <div class="footer__bottom">
         <p class="footer__copyright">Copyright © 2019. All Rights Reserved</p>
     </div>
+    <div class="info__popup">
+        <img class="info__close" src="/img/close-button.svg" alt="">
+        <form id="callback" class="form">
+            <div class="form__field">
+                <input class="clear-form" type="text" name="name" placeholder="<?= $this->params['name'];?>" required/>
+            </div>
+            <div class="form__field">
+                <input class="clear-form" type="email" name="email" placeholder="E-Mail"/>
+                <span class="form__error"><?= $this->params['email_placeholder'];?></span>
+            </div>
+            <div class="form__field">
+                <input class="clear-form" type="tel" name="phone" placeholder="Телефон"/>
+                <span class="form__error"><?= $this->params['phone_placeholder'];?></span>
+            </div>
+            <div class="form__field">
+                <textarea class="clear-form" cols="30" rows="6" name="text" id="text" required placeholder="Повідомлення"></textarea>
+            </div>
+            <p class="form__notification">Заявка отправлена</p>
+            <input class="form__send" value="Відправити" type="submit">
+        </form>
+    </div>
+    <div class="info__overlay"></div>
 </footer>
 
 

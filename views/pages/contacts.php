@@ -13,19 +13,20 @@ $this->title = $contactsPage->getName();
             <?= $contactsPage->getText();?>
             <form id="callback" class="form">
                 <div class="form__field">
-                    <input type="text" name="name" placeholder="<?=$this->params['name']?>" required />
+                    <input class="clear-form" type="text" name="name" placeholder="<?= $this->params['name'];?>" required/>
                 </div>
                 <div class="form__field">
-                    <input type="email" name="email" placeholder="E-Mail" />
-                    <span class="form__error"><?=$this->params['email_placeholder']?></span>
+                    <input class="clear-form" type="email" name="email" placeholder="E-Mail"/>
+                    <span class="form__error"><?= $this->params['email_placeholder'];?></span>
                 </div>
                 <div class="form__field">
-                    <input type="tel" name="phone" placeholder="Телефон" />
-                    <span class="form__error"><?=$this->params['phone_placeholder']?></span>
+                    <input class="clear-form" type="tel" name="phone" placeholder="Телефон"/>
+                    <span class="form__error"><?= $this->params['phone_placeholder'];?></span>
                 </div>
                 <div class="form__field">
-                    <textarea name="text" id="text" cols="30" rows="6" required placeholder="Повідомлення"></textarea>
+                    <textarea class="clear-form" cols="30" rows="6" name="text" id="text" required placeholder="Повідомлення"></textarea>
                 </div>
+                <p class="form__notification">Заявка отправлена</p>
                 <input class="form__send" value="Відправити" type="submit">
             </form>
             <div class="services__container">
