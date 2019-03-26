@@ -250,6 +250,10 @@ body {
       line-height: 50px;
       font-size: 30px;
     }
+    @include screen-375 {
+      line-height: 40px;
+      font-size: 28px;
+    }
   }
   &__name {
     line-height: 70px;
@@ -271,6 +275,9 @@ body {
       display: block;
       margin: 20px auto;
       width: 70%;
+    }
+    @include screen-375 {
+      width: 100%;
     }
   }
   &__phone {
@@ -685,13 +692,19 @@ body {
 .legislation {
   &__container {
     @extend %main-content;
-    padding: 50px 0;
+    padding: 50px 20px;
+    @include screen-375 {
+      padding: 20px;
+    }
   }
   &__caption {
     @extend %caption;
     padding: 200px 0 150px;
     font-size: 60px;
     background: url("../img/law-books-and-gavel.jpg") no-repeat center / cover;
+    @include screen-600 {
+      font-size: 11vw;
+    }
   }
   a {
     display: block;
@@ -714,6 +727,9 @@ body {
     padding: 200px 0 100px;
     font-size: 60px;
     background: url("../img/afcf4b9fb179a22de33ec6ab23da451f.jpg") no-repeat center / cover;
+    @include screen-600 {
+      font-size: 11vw;
+    }
   }
   &__item {
     &:nth-of-type(even) {
@@ -806,6 +822,9 @@ body {
     padding: 200px 0 180px;
     font-size: 60px;
     background: url("../img/sl-3.jpg") no-repeat center / cover;
+    @include screen-600 {
+      font-size: 11vw;
+    }
   }
   &__title {
     margin-bottom: 10px;
@@ -831,6 +850,9 @@ body {
     padding: 200px 0 180px;
     font-size: 60px;
     background: url("../img/sl-3.jpg") no-repeat center / cover;
+    @include screen-600 {
+      font-size: 11vw;
+    }
   }
   &__title {
     margin-bottom: 10px;

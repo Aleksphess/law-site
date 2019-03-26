@@ -403,6 +403,10 @@ body {
       .info__text {
         line-height: 50px;
         font-size: 30px; } }
+    @media screen and (max-width: 375px) {
+      .info__text {
+        line-height: 40px;
+        font-size: 28px; } }
   .info__name {
     line-height: 70px;
     font-size: 44px;
@@ -423,6 +427,9 @@ body {
         display: block;
         margin: 20px auto;
         width: 70%; } }
+    @media screen and (max-width: 375px) {
+      .info__callback, .info__phone {
+        width: 100%; } }
   .info__phone {
     background: #fff;
     color: #290e05; }
@@ -762,11 +769,17 @@ body {
     font-weight: 300; }
 
 .legislation__container {
-  padding: 50px 0; }
+  padding: 50px 20px; }
+  @media screen and (max-width: 375px) {
+    .legislation__container {
+      padding: 20px; } }
 .legislation__caption {
   padding: 200px 0 150px;
   font-size: 60px;
   background: url("../img/law-books-and-gavel.jpg") no-repeat center/cover; }
+  @media screen and (max-width: 600px) {
+    .legislation__caption {
+      font-size: 11vw; } }
 .legislation a {
   display: block;
   margin-bottom: 15px;
@@ -782,6 +795,9 @@ body {
   padding: 200px 0 100px;
   font-size: 60px;
   background: url("../img/afcf4b9fb179a22de33ec6ab23da451f.jpg") no-repeat center/cover; }
+  @media screen and (max-width: 600px) {
+    .documents__caption {
+      font-size: 11vw; } }
 .documents__item:nth-of-type(even) {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -852,6 +868,9 @@ body {
   padding: 200px 0 180px;
   font-size: 60px;
   background: url("../img/sl-3.jpg") no-repeat center/cover; }
+  @media screen and (max-width: 600px) {
+    .order__caption {
+      font-size: 11vw; } }
 .order__title {
   margin-bottom: 10px;
   font-size: 18px;
@@ -868,6 +887,9 @@ body {
   padding: 200px 0 180px;
   font-size: 60px;
   background: url("../img/sl-3.jpg") no-repeat center/cover; }
+  @media screen and (max-width: 600px) {
+    .memory__caption {
+      font-size: 11vw; } }
 .memory__title {
   margin-bottom: 10px;
   font-size: 18px;
