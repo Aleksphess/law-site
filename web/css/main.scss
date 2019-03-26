@@ -20,8 +20,14 @@ $width: 100%;
   }
 }
 
-@mixin screen-679 {
-  @media screen and (max-width: 679px) {
+@mixin screen-600 {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin screen-375 {
+  @media screen and (max-width: 375px) {
     @content;
   }
 }
@@ -86,6 +92,11 @@ body {
     justify-content: space-between;
     &>a {
       flex: 1;
+      img {
+        @include screen-600 {
+          width: 60px !important;
+        }
+      }
     }
   }
 
@@ -176,7 +187,6 @@ body {
       padding: 5px 15px;
       cursor: pointer;
       font-size: 40px;
-      font-weight: bold;
       text-align: right;
       color: $main-color;
     }
@@ -189,6 +199,9 @@ body {
       font-size: 35px;
       font-weight: 500;
       color: #000;
+      @include screen-375 {
+        font-size: 25px;
+      }
       &:hover {
         transition: 0.5s;
         color: $main-color;
@@ -222,11 +235,21 @@ body {
     &>* {
       color: $text-color;
     }
+    @include screen-1024 {
+      width: 100%;
+    }
+    @include screen-375 {
+      padding-top: 40px;
+    }
   }
   &__text {
     line-height: 60px;
     font-size: 34px;
     text-transform: uppercase;
+    @include screen-600 {
+      line-height: 50px;
+      font-size: 30px;
+    }
   }
   &__name {
     line-height: 70px;
@@ -234,12 +257,21 @@ body {
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 4px;
+    @include screen-600 {
+      line-height: 50px;
+      font-size: 35px;
+    }
   }
   &__callback, &__phone {
     display: inline-block;
     margin: 20px 0 0 50px;
     padding: 10px 20px;
     font-size: 22px;
+    @include screen-600 {
+      display: block;
+      margin: 20px auto;
+      width: 70%;
+    }
   }
   &__phone {
     background: $text-color;
@@ -287,7 +319,7 @@ body {
     margin-left: -250px;
     opacity: 0;
     z-index: 11;
-    @include screen-679 {
+    @include screen-600 {
       width: 100%;
       height: auto;
       left: 0;
@@ -378,6 +410,9 @@ body {
 
 .about {
   padding: 50px 0;
+  @include screen-600 {
+    padding: 30px 0;
+  }
   &__container {
     @extend %main-content;
   }
@@ -388,6 +423,10 @@ body {
     position: relative;
     outline: 2px solid $main-color;
     outline-offset: -10px;
+    @include screen-600 {
+      width: 100%;
+      margin: 0 0 20px 0;
+    }
   }
   &__block {
       text-align: justify;
@@ -407,8 +446,10 @@ body {
       p {
         margin-bottom: 10px;
         line-height: 27px;
+        @include screen-600 {
+          line-height: 22px;
+        }
       }
-
   }
   &__text {
     p {
@@ -435,14 +476,18 @@ body {
   &__container {
     @extend %main-content;
     margin-top: 30px;
+    p {
+      margin-bottom: 20px;
+      line-height: 22px;
+    }
   }
   &__caption {
-      padding: 130px 0;
-      font-size: 60px;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: $main-color;
-      background: url("../img/library-869061_1920-4.jpg") no-repeat center top / cover;
+    padding: 180px 0 90px;
+    font-size: 60px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $main-color;
+    background: url("../img/library-869061_1920-4.jpg") no-repeat center top / cover;
   }
   &__subcaption {
     @extend .about-us__caption;
@@ -456,6 +501,11 @@ body {
     position: relative;
     outline: 2px solid $main-color;
     outline-offset: -10px;
+    @include screen-600 {
+      width: 100%;
+      float: none;
+      margin: 0 0 20px 0;
+    }
   }
   &__block {
     text-align: justify;
@@ -502,6 +552,9 @@ body {
 .advantages {
   clear: both;
   background: url("../img/4444.jpg") no-repeat center fixed / cover;
+  @include screen-600 {
+    padding-bottom: 30px;
+  }
   &__container {
     @extend %main-content;
     @extend %flexbox;
@@ -517,6 +570,13 @@ body {
     background: rgba(255, 255, 255, 0.7);
     padding: 10px 20px;
     margin: 3%;
+    @include screen-1024 {
+      width: 34%;
+    }
+    @include screen-600 {
+      width: 100%;
+      min-height: auto;
+    }
   }
   &__title {
     font-size: 18px;
@@ -539,6 +599,12 @@ body {
     @extend %flexbox;
     justify-content: space-between;
     margin-top: 20px;
+    @include screen-1024 {
+      justify-content: space-evenly;
+    }
+    @include screen-600 {
+      justify-content: space-between;
+    }
   }
   &__caption {
     @extend %caption;
@@ -549,6 +615,12 @@ body {
     width: 11%;
     text-align: center;
     background: rgba(255,255,255,0.7);
+    @include screen-1024 {
+      width: 26%;
+    }
+    @include screen-600 {
+      width: 49%;
+    }
   }
   &__obj {
     width: 110px;
@@ -617,7 +689,7 @@ body {
   }
   &__caption {
     @extend %caption;
-    padding: 200px 0;
+    padding: 200px 0 150px;
     font-size: 60px;
     background: url("../img/law-books-and-gavel.jpg") no-repeat center / cover;
   }
@@ -639,7 +711,7 @@ body {
   }
   &__caption {
     @extend %caption;
-    padding: 200px 0;
+    padding: 200px 0 100px;
     font-size: 60px;
     background: url("../img/afcf4b9fb179a22de33ec6ab23da451f.jpg") no-repeat center / cover;
   }
@@ -658,6 +730,9 @@ body {
     justify-content: space-between;
     flex-direction: column;
     background: rgba(41, 14, 5, 0.7);
+    @include screen-600 {
+      width: 100%;
+    }
   }
   &__name {
     color: $text-color;
@@ -679,11 +754,11 @@ body {
 .services-page {
   &__container {
     @extend %main-content;
-    padding: 50px 0;
+    padding: 50px 20px;
   }
   &__caption {
     @extend %caption;
-    padding: 200px 0;
+    padding: 200px 0 120px;
     font-size: 60px;
     background: url("../img/about-the-superstition-local-business-network-mesa-az.jpg") no-repeat center / cover;
   }
@@ -724,11 +799,11 @@ body {
 .order {
   &__container {
     @extend %main-content;
-    padding: 50px 0;
+    padding: 50px 20px;
   }
   &__caption {
     @extend %caption;
-    padding: 200px 0;
+    padding: 200px 0 180px;
     font-size: 60px;
     background: url("../img/sl-3.jpg") no-repeat center / cover;
   }
@@ -749,11 +824,11 @@ body {
 .memory {
   &__container {
     @extend %main-content;
-    padding: 50px 0;
+    padding: 50px 20px;
   }
   &__caption {
     @extend %caption;
-    padding: 200px 0;
+    padding: 200px 0 180px;
     font-size: 60px;
     background: url("../img/sl-3.jpg") no-repeat center / cover;
   }
@@ -796,7 +871,7 @@ body {
   }
   &__caption {
     @extend %caption;
-    padding: 200px 0;
+    padding: 200px 0 120px;
     font-size: 60px;
     background: url("../img/gazeta.jpg") no-repeat center / cover;
   }
@@ -804,6 +879,12 @@ body {
     width: 30%;
     margin: 10px 20px;
     background: rgba(41, 14, 5, 0.6);
+    @include screen-1024 {
+      width: 40%;
+    }
+    @include screen-600 {
+      width: 100%;
+    }
   }
   &__img {
     width: 100%;
@@ -867,7 +948,11 @@ body {
     @extend %flexbox;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 0;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    @include screen-600 {
+      display: block;
+    }
   }
   &__caption {
     @extend %caption;
@@ -886,17 +971,23 @@ body {
   }
   &__info {
     width: 40%;
+    @include screen-600 {
+      width: 100%;
+      margin-bottom: 20px;
+    }
     p {
       line-height: 24px;
     }
-  }
-  .services__container {
-    margin-top: 40px;
   }
   .form {
     width: 44%;
     display: inline-block;
     padding: 25px;
+    @include screen-600 {
+      width: 100%;
+      padding: 0;
+      box-sizing: border-box;
+    }
     &__field {
       margin-bottom: 10px;
     }
@@ -942,8 +1033,13 @@ body {
   }
   .services__container {
     width: 100%;
+    margin-top: 40px;
+    box-sizing: border-box;
     .services__item {
       width: 24%;
+      @include screen-600 {
+        width: 49%;
+      }
     }
   }
 }
@@ -1001,6 +1097,18 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 30px 20px;
+    @include screen-600 {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  &__nav {
+    @include screen-1024 {
+      margin-bottom: 20px;
+    }
+    @include screen-600 {
+      margin-bottom: 30px;
+    }
   }
   &__caption {
     margin-bottom: 5px;
@@ -1013,6 +1121,9 @@ body {
     & * {
       margin-bottom: 10px;
     }
+    @include screen-600 {
+      margin-bottom: 30px;
+    }
   }
   &__title {
     font-size: 16px;
@@ -1021,6 +1132,9 @@ body {
   &__address {
     & * {
       margin-bottom: 10px;
+    }
+    @include screen-600 {
+      margin-bottom: 30px;
     }
   }
   &__location {

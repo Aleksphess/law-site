@@ -258,6 +258,9 @@ body {
       -webkit-box-flex: 1;
           -ms-flex: 1;
               flex: 1; }
+      @media screen and (max-width: 600px) {
+        .header__container > a img {
+          width: 60px !important; } }
   .header__nav {
     -webkit-box-flex: 9;
         -ms-flex: 9;
@@ -340,7 +343,6 @@ body {
       padding: 5px 15px;
       cursor: pointer;
       font-size: 40px;
-      font-weight: bold;
       text-align: right;
       color: #290e05; }
     .header .adaptive-menu__link {
@@ -352,6 +354,9 @@ body {
       font-size: 35px;
       font-weight: 500;
       color: #000; }
+      @media screen and (max-width: 375px) {
+        .header .adaptive-menu__link {
+          font-size: 25px; } }
       .header .adaptive-menu__link:hover {
         -webkit-transition: 0.5s;
         transition: 0.5s;
@@ -384,21 +389,40 @@ body {
     text-align: center; }
     .info__block > * {
       color: #fff; }
+    @media screen and (max-width: 1024px) {
+      .info__block {
+        width: 100%; } }
+    @media screen and (max-width: 375px) {
+      .info__block {
+        padding-top: 40px; } }
   .info__text {
     line-height: 60px;
     font-size: 34px;
     text-transform: uppercase; }
+    @media screen and (max-width: 600px) {
+      .info__text {
+        line-height: 50px;
+        font-size: 30px; } }
   .info__name {
     line-height: 70px;
     font-size: 44px;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 4px; }
+    @media screen and (max-width: 600px) {
+      .info__name {
+        line-height: 50px;
+        font-size: 35px; } }
   .info__callback, .info__phone {
     display: inline-block;
     margin: 20px 0 0 50px;
     padding: 10px 20px;
     font-size: 22px; }
+    @media screen and (max-width: 600px) {
+      .info__callback, .info__phone {
+        display: block;
+        margin: 20px auto;
+        width: 70%; } }
   .info__phone {
     background: #fff;
     color: #290e05; }
@@ -441,7 +465,7 @@ body {
     margin-left: -250px;
     opacity: 0;
     z-index: 11; }
-    @media screen and (max-width: 679px) {
+    @media screen and (max-width: 600px) {
       .info__popup {
         width: 100%;
         height: auto;
@@ -520,6 +544,9 @@ body {
 
 .about {
   padding: 50px 0; }
+  @media screen and (max-width: 600px) {
+    .about {
+      padding: 30px 0; } }
   .about__photo {
     width: 53%;
     float: left;
@@ -527,6 +554,10 @@ body {
     position: relative;
     outline: 2px solid #290e05;
     outline-offset: -10px; }
+    @media screen and (max-width: 600px) {
+      .about__photo {
+        width: 100%;
+        margin: 0 0 20px 0; } }
   .about__block {
     text-align: justify; }
     .about__block img {
@@ -543,6 +574,9 @@ body {
     .about__block p {
       margin-bottom: 10px;
       line-height: 27px; }
+      @media screen and (max-width: 600px) {
+        .about__block p {
+          line-height: 22px; } }
   .about__text p {
     margin-bottom: 20px;
     line-height: 22px; }
@@ -559,8 +593,11 @@ body {
 
 .about-us__container {
   margin-top: 30px; }
+  .about-us__container p {
+    margin-bottom: 20px;
+    line-height: 22px; }
 .about-us__caption, .about-us__subcaption {
-  padding: 130px 0;
+  padding: 180px 0 90px;
   font-size: 60px;
   font-weight: 700;
   text-transform: uppercase;
@@ -576,6 +613,11 @@ body {
   position: relative;
   outline: 2px solid #290e05;
   outline-offset: -10px; }
+  @media screen and (max-width: 600px) {
+    .about-us__photo {
+      width: 100%;
+      float: none;
+      margin: 0 0 20px 0; } }
 .about-us__block {
   text-align: justify; }
   .about-us__block img {
@@ -609,6 +651,9 @@ body {
 .advantages {
   clear: both;
   background: url("../img/4444.jpg") no-repeat center fixed/cover; }
+  @media screen and (max-width: 600px) {
+    .advantages {
+      padding-bottom: 30px; } }
   .advantages__container {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -620,6 +665,13 @@ body {
     background: rgba(255, 255, 255, 0.7);
     padding: 10px 20px;
     margin: 3%; }
+    @media screen and (max-width: 1024px) {
+      .advantages__item {
+        width: 34%; } }
+    @media screen and (max-width: 600px) {
+      .advantages__item {
+        width: 100%;
+        min-height: auto; } }
   .advantages__title {
     font-size: 18px;
     padding: 10px 0;
@@ -638,12 +690,28 @@ body {
         -ms-flex-pack: justify;
             justify-content: space-between;
     margin-top: 20px; }
+    @media screen and (max-width: 1024px) {
+      .services__container {
+        -webkit-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+                justify-content: space-evenly; } }
+    @media screen and (max-width: 600px) {
+      .services__container {
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between; } }
   .services__caption {
     text-shadow: 2px 3px 2px rgba(105, 130, 120, 0.4); }
   .services__item {
     width: 11%;
     text-align: center;
     background: rgba(255, 255, 255, 0.7); }
+    @media screen and (max-width: 1024px) {
+      .services__item {
+        width: 26%; } }
+    @media screen and (max-width: 600px) {
+      .services__item {
+        width: 49%; } }
   .services__obj {
     width: 110px; }
   .services__title {
@@ -696,7 +764,7 @@ body {
 .legislation__container {
   padding: 50px 0; }
 .legislation__caption {
-  padding: 200px 0;
+  padding: 200px 0 150px;
   font-size: 60px;
   background: url("../img/law-books-and-gavel.jpg") no-repeat center/cover; }
 .legislation a {
@@ -711,7 +779,7 @@ body {
 .documents__container {
   padding: 50px 0; }
 .documents__caption {
-  padding: 200px 0;
+  padding: 200px 0 100px;
   font-size: 60px;
   background: url("../img/afcf4b9fb179a22de33ec6ab23da451f.jpg") no-repeat center/cover; }
 .documents__item:nth-of-type(even) {
@@ -735,6 +803,9 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   background: rgba(41, 14, 5, 0.7); }
+  @media screen and (max-width: 600px) {
+    .documents__content {
+      width: 100%; } }
 .documents__name {
   color: #fff;
   font-size: 28px;
@@ -748,9 +819,9 @@ body {
   margin-bottom: 10px; }
 
 .services-page__container {
-  padding: 50px 0; }
+  padding: 50px 20px; }
 .services-page__caption {
-  padding: 200px 0;
+  padding: 200px 0 120px;
   font-size: 60px;
   background: url("../img/about-the-superstition-local-business-network-mesa-az.jpg") no-repeat center/cover; }
 .services-page__title {
@@ -776,9 +847,9 @@ body {
     list-style: disc; }
 
 .order__container {
-  padding: 50px 0; }
+  padding: 50px 20px; }
 .order__caption {
-  padding: 200px 0;
+  padding: 200px 0 180px;
   font-size: 60px;
   background: url("../img/sl-3.jpg") no-repeat center/cover; }
 .order__title {
@@ -792,9 +863,9 @@ body {
   font-weight: bold; }
 
 .memory__container {
-  padding: 50px 0; }
+  padding: 50px 20px; }
 .memory__caption {
-  padding: 200px 0;
+  padding: 200px 0 180px;
   font-size: 60px;
   background: url("../img/sl-3.jpg") no-repeat center/cover; }
 .memory__title {
@@ -828,13 +899,19 @@ body {
           justify-content: center;
   padding: 50px 0; }
 .news-page__caption {
-  padding: 200px 0;
+  padding: 200px 0 120px;
   font-size: 60px;
   background: url("../img/gazeta.jpg") no-repeat center/cover; }
 .news-page__item {
   width: 30%;
   margin: 10px 20px;
   background: rgba(41, 14, 5, 0.6); }
+  @media screen and (max-width: 1024px) {
+    .news-page__item {
+      width: 40%; } }
+  @media screen and (max-width: 600px) {
+    .news-page__item {
+      width: 100%; } }
 .news-page__img {
   width: 100%;
   outline: 2px solid #290e05;
@@ -883,7 +960,12 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 50px 0; }
+  padding: 50px 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+  @media screen and (max-width: 600px) {
+    .contacts__container {
+      display: block; } }
 .contacts__caption {
   padding: 200px 0;
   font-size: 60px;
@@ -898,14 +980,22 @@ body {
   color: #290e05; }
 .contacts__info {
   width: 40%; }
+  @media screen and (max-width: 600px) {
+    .contacts__info {
+      width: 100%;
+      margin-bottom: 20px; } }
   .contacts__info p {
     line-height: 24px; }
-.contacts .services__container {
-  margin-top: 40px; }
 .contacts .form {
   width: 44%;
   display: inline-block;
   padding: 25px; }
+  @media screen and (max-width: 600px) {
+    .contacts .form {
+      width: 100%;
+      padding: 0;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box; } }
   .contacts .form__field {
     margin-bottom: 10px; }
   .contacts .form__error {
@@ -942,9 +1032,15 @@ body {
   .contacts .form input:invalid:not(:placeholder-shown) + .form__error, .contacts .form textarea:invalid:not(:placeholder-shown) + .form__error {
     display: block; }
 .contacts .services__container {
-  width: 100%; }
+  width: 100%;
+  margin-top: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
   .contacts .services__container .services__item {
     width: 24%; }
+    @media screen and (max-width: 600px) {
+      .contacts .services__container .services__item {
+        width: 49%; } }
 
 .pagination {
   width: 100%; }
@@ -995,6 +1091,19 @@ body {
         -ms-flex-align: center;
             align-items: center;
     padding: 30px 20px; }
+    @media screen and (max-width: 600px) {
+      .footer__container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        text-align: center; } }
+  @media screen and (max-width: 1024px) {
+    .footer__nav {
+      margin-bottom: 20px; } }
+  @media screen and (max-width: 600px) {
+    .footer__nav {
+      margin-bottom: 30px; } }
   .footer__caption {
     margin-bottom: 5px;
     font-size: 18px; }
@@ -1002,11 +1111,17 @@ body {
     padding: 5px 0; }
   .footer__name * {
     margin-bottom: 10px; }
+  @media screen and (max-width: 600px) {
+    .footer__name {
+      margin-bottom: 30px; } }
   .footer__title {
     font-size: 16px;
     text-transform: uppercase; }
   .footer__address * {
     margin-bottom: 10px; }
+  @media screen and (max-width: 600px) {
+    .footer__address {
+      margin-bottom: 30px; } }
   .footer__location {
     margin-top: 20px;
     line-height: 21px; }
